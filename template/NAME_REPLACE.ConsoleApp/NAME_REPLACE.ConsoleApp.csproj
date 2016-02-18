@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CE2415D-BE99-40B2-85C1-1667582BF699}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NAME_REPLACE.ConsoleApp</RootNamespace>
+    <AssemblyName>NAME_REPLACE.ConsoleApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DryIoc, Version=2.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DryIoc.dll.2.1.3\lib\net45\DryIoc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentCommandLineParser, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentCommandLineParser.1.4.3\lib\net35\FluentCommandLineParser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IOC.FW.Configuration">
+      <HintPath>..\CodvancedFwReferences\IOC.FW.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="IOC.FW.ContainerManager">
+      <HintPath>..\CodvancedFwReferences\IOC.FW.ContainerManager.dll</HintPath>
+    </Reference>
+    <Reference Include="IOC.FW.Core">
+      <HintPath>..\CodvancedFwReferences\IOC.FW.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IOC.FW.Extensions">
+      <HintPath>..\CodvancedFwReferences\IOC.FW.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="IOC.FW.Repository">
+      <HintPath>..\CodvancedFwReferences\IOC.FW.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="IOC.FW.Shared">
+      <HintPath>..\CodvancedFwReferences\IOC.FW.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NAME_REPLACE.Abstraction\NAME_REPLACE.Abstraction.csproj">
+      <Project>{7f22fd06-01bd-4db8-b9ec-56584c88a02f}</Project>
+      <Name>NAME_REPLACE.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NAME_REPLACE.Binding\NAME_REPLACE.Binding.csproj">
+      <Project>{5cd2e917-56f0-4e62-9a59-3e74ba9a1fde}</Project>
+      <Name>NAME_REPLACE.Binding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NAME_REPLACE.Common.Abstraction\NAME_REPLACE.Common.Abstraction.csproj">
+      <Project>{0ef0726e-3e34-4362-84f6-ba1a8fcf8d14}</Project>
+      <Name>NAME_REPLACE.Common.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NAME_REPLACE\NAME_REPLACE.csproj">
+      <Project>{f464c056-1b4a-4477-8168-9304241b9c7d}</Project>
+      <Name>NAME_REPLACE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
