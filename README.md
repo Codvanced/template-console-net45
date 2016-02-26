@@ -1,1 +1,1 @@
-# template-console-app-net45
+# Template of console application in .Net 4.5 and with Codvanced IoC Framework
